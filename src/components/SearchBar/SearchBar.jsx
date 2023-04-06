@@ -6,7 +6,7 @@ function SearchBar ({onSearch}) {
     const [id, setId] = useState("");
 
     const handleChange = (event) => {
-           setId(event.target.value); // Esto es quien ejecuta, en este caso, el input
+           setId (event.target.value); // Esto es quien ejecuta, en este caso, el input. Value es lo escrito en el input
     }
 
     return (
@@ -16,12 +16,13 @@ function SearchBar ({onSearch}) {
                 className={styles.input}
                 onChange={handleChange} // Agrega onChange aquí
                 value={id} // Actualiza el valor del input con el estado actualizado
+                placeholder='Ingresar ID'
             />
-            <button className={styles.SearchBtn} onClick={() => onSearch(id)}> AGREGAR
+            <button className={styles.button} onClick={() => onSearch(id)}> AGREGAR
         </button>
         </div>
     )
 }
-
+  
 export default SearchBar;
 

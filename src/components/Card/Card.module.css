@@ -1,31 +1,65 @@
 .card {
-    display: inline-block;
-    background-color: rgba(50, 205, 50, 0.5);
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px;
-    width: 200px;
-    text-align: center;
-    vertical-align: top;
-  }
+  display: inline-block;
+  background-image: url("/public/fondo-card.png");
+  background-attachment: scroll;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.image {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
-  .imageWrapper {
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .image {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 10px;
-  }
-  
-  
-  .name, .species, .gender {
-    font-size: 18px;
-    margin: 10px 0;
-  }
-  
-  
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+}
+
+
+.name,
+.species,
+.gender {
+  font-size: 18px;
+  margin: 10px 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.closeButton {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #FF0000;
+  /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); */
+  position: relative;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.closeButton::before,
+.closeButton::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #FFF;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.closeButton::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+

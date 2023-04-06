@@ -1,16 +1,59 @@
 .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+}
+
+.nav_search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* El contenedor ocupa todo el ancho del elemento padre */
+  padding: 1rem; /* Aumenta el padding para dar más espacio */
+}
+
+.links_container {
+  display: flex; /* Agrega un display flex para que los elementos se ordenen horizontalmente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  text-decoration: none;
+}
+
+.links_container h3 {
+  margin: 0 1rem; /* Agrega un margen a los títulos para separarlos */
+  color: #fff;
+  text-decoration: none;
+  font-family: "Bebas Neue";
+}
+
+.link {
+  text-decoration: none;
+}
+
+.search_container {
+  flex: 1; /* El contenedor de búsqueda ocupa todo el espacio disponible */
+  margin-right: 1rem; /* Añade un margen derecho para separarlo de los elementos a la derecha */
+}
+
+
+
+/* .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #f2f2f2;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
+    padding: 0.5rem;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
   }
   
   .nav_search {
     float: right;
+    width: 50%;
     border-radius: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     padding: 10px;
@@ -18,5 +61,6 @@
     font-size: 1.2em;
     color: #666;
     border: none;
-    }
+    position: relative;
+    } */
   

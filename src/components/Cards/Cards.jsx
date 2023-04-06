@@ -1,13 +1,14 @@
 import React from 'react'
 import Card from "../Card/Card"
 
-function Cards({characters, onClose}) {
+function Cards({ characters, onClose }) {
     return (
         <div>
-            {characters.map(({id, name, species, gender, image}) => {
-                
+            {characters.map(({ id, name, species, gender, image }) => {
+
                 return (
                     <Card
+                        key={id}
                         id={id}
                         name={name}
                         species={species}

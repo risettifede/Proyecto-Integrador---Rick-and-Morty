@@ -23,7 +23,7 @@ function App () {
       .then((response) => response.json())
       .then((data) => {
         if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
+          setCharacters((oldChars) => [...oldChars, data]); // setCharcters está recibiendo una callback. Y tiene un parametro (oldChars) que simboliza el estado
         } else {
           window.alert('No hay personajes con ese ID');
         }
@@ -31,17 +31,16 @@ function App () {
   };
 
   const onClose = (id) => {
-    setCharacters(
-      characters.filter((char) => char.id !== id)
-    )
+    setCharacters(characters.filter((char) => char.id !== id))
   };
 
+  
   return (
-    <div className='App' style={{ padding: '25px' }}>
+    <div className='App'>
       <div>
         <Nav onSearch={onSearch}/>
         <Routes>
-          <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/>
+          <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/> 
           <Route path="/about" element={<About />}/>
           <Route path="/detail/:detailId" element={<Detail/>}/>
         </Routes>
@@ -51,3 +50,6 @@ function App () {
 }
 
 export default App;
+
+
+ 
