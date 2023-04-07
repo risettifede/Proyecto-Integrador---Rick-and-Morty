@@ -6,7 +6,6 @@ function Card({ id, name, species, gender, image, onClose }) {
    return (
       <div className={styles.card}>
          <button className={styles.closeButton} onClick={() => onClose(id)}>
-            X
          </button>
          <img className={styles.image} src={image} alt="Rick Sánchez" />
 
