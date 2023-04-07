@@ -6,11 +6,15 @@ function Form() {
     <form className={styles.form}> 
       <div>
         <label htmlFor='username'name="username" >
+          Username:
           <input type="text" className={styles.input}/>
         </label>
+
         <label htmlFor='password'name="password" >
+          Password: 
           <input type="text"className={styles.input} />
         </label>
+        
         <button className={styles.button}>
           Submit
         </button>

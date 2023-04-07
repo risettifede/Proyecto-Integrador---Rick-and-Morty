@@ -5,8 +5,9 @@ import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import About from '../src/components/About/About'
 import Detail from './components/Detail/Detail'
+import Form from './components/Form/Form'
 
-function App () {
+function App() {
   //! HOOKS
   const [characters, setCharacters] = useState([]);
 
@@ -17,7 +18,7 @@ function App () {
 
     if (characters.find((char) => char.id === id)) {
       return alert("Personaje repetido");
-    } 
+    }
 
     fetch(`${URL_BASE}/character/${id}?key=${KEY}`)
       .then((response) => response.json())
@@ -34,16 +35,16 @@ function App () {
     setCharacters(characters.filter((char) => char.id !== id))
   };
 
-  
+
   return (
     <div className='App'>
       <div>
-        <Nav onSearch={onSearch}/>
+        <Nav onSearch={onSearch} />
         <Routes>
-          
-          <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/> 
-          <Route path="/about" element={<About />}/>
-          <Route path="/detail/:detailId" element={<Detail/>}/>
+          <Route path="/" element={<Form />} />
+          <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/detail/:detailId" element={<Detail />} />
         </Routes>
       </div>
     </div>
@@ -53,4 +54,3 @@ function App () {
 export default App;
 
 
- 
