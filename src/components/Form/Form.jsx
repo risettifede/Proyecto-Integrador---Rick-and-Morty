@@ -5,16 +5,17 @@ function Form() {
   return (
     <form className={styles.form}> 
       <div className={styles.img_container}>
-        <img src="Rick Sánchez.png" alt="Rick" />
+        <img src="rickymorty.png" alt="Rick" />
       </div>
       <div>
+        <label htmlFor="ingresatusdatos" className={styles.label}> 👇🏼 INGRESA TUS DATOS 👇🏼</label>
         <label htmlFor='username'name="username" >
-          Username:
+          
           <input type="text" className={styles.input} placeholder='E-mail'/>
         </label>
 
         <label htmlFor='password'name="password" >
-          Password: 
+          
           <input type="text"className={styles.input} placeholder='Password' />
         </label>
 

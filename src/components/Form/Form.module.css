@@ -1,83 +1,79 @@
 .form {
     background-color: #2c3e50;
+    position: absolute;
     border-radius: 10px;
     padding: 10px; /* aumentamos el padding para que haya más espacio entre los elementos */
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 600px;
-    width: 100%;
+    max-width: 700px;
+    width: 200%;
+    font-family: 'Bebas Neue';
    ; /* reducimos un poco el ancho para que los elementos no queden muy separados */
 }
 
+.label {
+    color: #fff;
+    font-size: x-large;
+}
+
 .img_container {
-    border-radius: 1800px;
-    overflow: hidden; /* ocultamos las partes de la imagen que sobresalgan de la caja */
-    
+    width: 70%;
+    height: 70%;
 }
 
 .img_container img {
-    width: 100%; /* ajustamos el ancho para que la imagen ocupe todo el espacio disponible */
-    height: 100%; /* ajustamos la altura para que se mantenga la proporción original */
-    border-radius: 1800px;
+    width: 70%; /* ajustamos el ancho para que la imagen ocupe todo el espacio disponible */
+    height: 70%; /* ajustamos la altura para que se mantenga la proporción original */
+    
 }
 
 .input {
     background-color: #fff;
     border: none;
     border-radius: 5px; /* reducimos el radio para que los bordes sean más suaves */
-    box-shadow: 0 0 5px #f4d03f;
+    /* box-shadow: 0 0 5px #f4d03f; */
     margin: 10px;
     padding: 15px; /* aumentamos el padding para que el texto no quede pegado a los bordes */
     font-size: 16px;
-    width: 50%; /* ampliamos el ancho para que ocupe todo el espacio disponible */
+    width: 80%; /* ampliamos el ancho para que ocupe todo el espacio disponible */
+    font-family: 'Bebas Neue' ;
     
 }
 
 .button {
-    background-color: #16a085;
-    border: none;
+    background-color: #f4d03f;
+    border: 1px solid #f4d03f;
     border-radius: 5px;
-    color: #fff;
+    color: black;
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px; /* aumentamos el margen para que quede más separado del input */
     padding: 15px;
-    width: 50%;
+    width: 40%;
+    font-family: 'Bebas Neue';
 }
 
 .input:hover {
     box-shadow: 0 0 10px #f4d03f; /* agregamos un efecto de sombra cuando el cursor pasa sobre el input */
+    cursor: crosshair;
 }
 
 
 .button:hover {
-    background-color: #1abc9c;
+    background-color: transparent;
+    border: 1px solid #f4d03f;
+    color: #fff;
 }
 
-.input:invalid {
+/* .input:invalid {
     box-shadow: 0 0 5px #e74c3c;
 }
 
 .input:valid {
     box-shadow: 0 0 5px #2ecc71;
-}
-
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.image-container img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-}
+} */
