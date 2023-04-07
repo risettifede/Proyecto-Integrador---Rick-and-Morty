@@ -40,6 +40,7 @@ function App () {
       <div>
         <Nav onSearch={onSearch}/>
         <Routes>
+          
           <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/> 
           <Route path="/about" element={<About />}/>
           <Route path="/detail/:detailId" element={<Detail/>}/>
