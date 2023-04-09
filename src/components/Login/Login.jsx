@@ -9,7 +9,7 @@ function Login() {
     password: "",
   });
 
-  const [error, setErrors] = useState({});
+  const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
     setUserData(event.target.value)
@@ -17,11 +17,12 @@ function Login() {
 
   const handleSumbit = (event) => {
     event.preventDefault();
+    alert ("Login Exitoso");
   }
 
 
   return (
-    <form className={styles.login}> 
+    <form className={styles.login} onSubmit={handleSumbit}> 
       <div className={styles.img_container}>
         <img src="rickymorty.png" alt="Rick" />
       </div>
