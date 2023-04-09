@@ -1,22 +1,37 @@
 import React from 'react'
-import styles from './Form.module.css'
+import styles from './Login.module.css'
 
-function Form() {
+function Login() {
   return (
-    <form className={styles.form}> 
+    <form className={styles.login}> 
       <div className={styles.img_container}>
         <img src="rickymorty.png" alt="Rick" />
       </div>
       <div>
-        <label htmlFor="ingresatusdatos" className={styles.label}> 👇🏼 INGRESA TUS DATOS 👇🏼</label>
-        <label htmlFor='username'name="username" >
-          
-          <input type="text" className={styles.input} placeholder='E-mail'/>
+        <label 
+        htmlFor="ingresatusdatos" 
+        className={styles.label}> 
+        👇🏼 INGRESA TUS DATOS 👇🏼
         </label>
 
-        <label htmlFor='password'name="password" >
+        <label 
+        htmlFor='username'
+        name="username" >
+  
+        <input 
+        type="text" 
+        className={styles.input} 
+        placeholder='E-mail'/>
+        </label>
+
+        <label 
+        htmlFor='password'
+        name="password" >
           
-          <input type="text"className={styles.input} placeholder='Password' />
+          <input 
+          type="text"
+          className={styles.input} 
+          placeholder='Password' />
         </label>
 
         <button className={styles.button}>
@@ -29,11 +44,7 @@ function Form() {
   )
 }
 
-export default Form;
-
-
-
-
+export default Login;
 
 /* EJEMPLO HECHO EN CLASE */
 

@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import About from '../src/components/About/About'
 import Detail from './components/Detail/Detail'
-import Form from './components/Form/Form'
+import Login from './components/Login/Login'
 
 function App() {
   //! HOOKS
@@ -41,7 +41,7 @@ function App() {
       <div>
         <Nav onSearch={onSearch} />
         <Routes>
-          <Route path="/" element={<Form />} />
+          <Route path="/" element={<Login />} />
           <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
           <Route path="/about" element={<About />} />
           <Route path="/detail/:detailId" element={<Detail />} />
