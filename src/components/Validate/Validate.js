@@ -1,10 +1,6 @@
-import React from 'react'
-import Login from '../Login/Login';
-
-
 export const validateEmail = (gmail) => {
     const errors = {};
-    const validateGmail = '/^[a-zA-Z0-9]+([._][a-zA-Z0-9]+)*@gmail\.com$/'
+    const validateGmail = '/^[a-zA-Z0-9]+([._][a-zA-Z0-9]+)*@gmail.com$/'
 
     if (!gmail) { errors.gmail = 'Debe ingresar un correo electrónico' }
     else if (!validateGmail.test(gmail)) { errors.gmail = 'Debe ingresar un gmail' }
@@ -16,7 +12,7 @@ export const validatePassword = (password) => {
     const errors = {};
     if (!password) { errors.password = 'Ingrese password' }
     else if (!/\d/.test(password)) { errors.password = 'Debe tener al menos un (1) número' } // Expresión regular: "/\d/" verifica si hay un dígito numérico.
-    
+    else if (password.length < 6 && password.length > 10) {errors.password = 'Debe tener entre 6 y 10 caracteres'}
 
 }
 

@@ -2,17 +2,20 @@ import React from 'react'
 import styles from './Login.module.css'
 import { useState } from 'react';
 
-function Login() {
+function Login(userLogin) {
+  
+  const [errors, setErrors] = useState({});
 
   const [userData, setUserData] = useState({
     email: "",
     password: "",
   });
 
-  const [errors, setErrors] = useState({});
-
   const handleChange = (event) => {
-    setUserData(event.target.value)
+    setUserData({
+      ...userData,
+      [event.target.name]: event.target.value
+    });
   }
 
   const handleSumbit = (event) => {
@@ -22,7 +25,7 @@ function Login() {
 
 
   return (
-    <form className={styles.login} onSubmit={handleSumbit}> 
+    <form className={styles.login} onSubmit={handleSumbit} login={userLogin}> 
       <div className={styles.img_container}>
         <img src="rickymorty.png" alt="Rick" />
       </div>

@@ -2,6 +2,8 @@ import './App.css'
 import Cards from './components/Cards/Cards'
 import Nav from './components/Nav/Nav'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import About from '../src/components/About/About'
 import Detail from './components/Detail/Detail'
@@ -10,6 +12,21 @@ import Login from './components/Login/Login'
 function App() {
   //! HOOKS
   const [characters, setCharacters] = useState([]);
+  const navigate = useNavigate();
+  const [access, setAccess] = useState(false);
+
+  const EMAIL = "invitado@gmail.com";
+  const PASSWORD = "invitado1"
+
+  const userLogin = (userData) => {
+    if (userData.email === EMAIL && userData.password === PASSWORD){ 
+      setAccess(true);
+      navigate("/home")} 
+  }
+
+  useEffect(() => {
+    !access && navigate('/');
+ }, [access, navigate]);
 
   //! EVENT HANDLERS
   const onSearch = (id) => {
