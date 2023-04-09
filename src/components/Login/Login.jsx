@@ -1,7 +1,25 @@
 import React from 'react'
 import styles from './Login.module.css'
+import { useState } from 'react';
 
 function Login() {
+
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [error, setErrors] = useState({});
+
+  const handleChange = (event) => {
+    setUserData(event.target.value)
+  }
+
+  const handleSumbit = (event) => {
+    event.preventDefault();
+  }
+
+
   return (
     <form className={styles.login}> 
       <div className={styles.img_container}>
@@ -21,7 +39,10 @@ function Login() {
         <input 
         type="text" 
         className={styles.input} 
-        placeholder='E-mail'/>
+        placeholder='E-mail'
+        value={userData.email}
+        onChange={handleChange}
+        />
         </label>
 
         <label 
@@ -31,11 +52,14 @@ function Login() {
           <input 
           type="text"
           className={styles.input} 
-          placeholder='Password' />
+          placeholder='Password'
+          value={userData.password}
+          onChange={handleChange}
+          />
         </label>
 
-        <button className={styles.button}>
-          Submit
+        <button 
+        className={styles.button}> Submit
         </button>
       </div>
 

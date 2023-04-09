@@ -3,9 +3,8 @@ import styles from './Nav.module.css';
 import SearchBar from '../SearchBar/SearchBar';
 import { Link, useLocation } from 'react-router-dom';
 
-const Nav = (props) => {
+function Nav (props) {
   const location = useLocation();
-
   if (location.pathname === "/") {
     return null;
   }
@@ -14,6 +13,7 @@ const Nav = (props) => {
     <div className={styles.nav} >
       <div className={styles.nav_search}>
         <div className={styles.search_container}>
+
           <SearchBar
             onSearch={props.onSearch}
           />
@@ -21,18 +21,18 @@ const Nav = (props) => {
 
         <div className={styles.links_container}>
           <div>
-            <Link to="/home" className={styles.link}>
-              <h3>
-                HOME
-              </h3>
+            <Link
+              to="/home"
+              className={styles.link}> <h3>HOME</h3>
             </Link>
+
           </div>
           <div>
-            <Link to="/about" className={styles.link}>
-              <h3>
-                ABOUT
-              </h3>
+            <Link
+              to="/about"
+              className={styles.link}> <h3>ABOUT</h3>
             </Link>
+
           </div>
         </div>
       </div>
