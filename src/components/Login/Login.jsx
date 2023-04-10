@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './Login.module.css'
 import { useState } from 'react';
+import validate from '../Validate/Validate';
 
-function Login(userLogin) {
+function Login({userLogin}) {
   
   const [errors, setErrors] = useState({});
-
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -16,16 +16,33 @@ function Login(userLogin) {
       ...userData,
       [event.target.name]: event.target.value
     });
+
+    // const handleChange = (event) => {
+    //   setUserData(prevState => ({
+    //     ...prevState,
+    //     [event.target.name]: event.target.value
+    //   }));
+    //                                                    ESTO PUEDE SER UNA MEJORA. PARA QUE ACTUALICE MÁS RAPIDO. REVISAR.                                                   
+    //   setErrors(validate({
+    //     ...userData,
+    //     [event.target.name]: event.target.value
+    //   }));
+    // }
+    
+
+    setErrors(validate({
+      ...userData,
+      [event.target.name]: event.target.value
+    }))
   }
 
-  const handleSumbit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    alert ("Login Exitoso");
+    userLogin(userData);
   }
-
 
   return (
-    <form className={styles.login} onSubmit={handleSumbit} login={userLogin}> 
+    <form className={styles.login} onSubmit={handleSubmit}> 
       <div className={styles.img_container}>
         <img src="rickymorty.png" alt="Rick" />
       </div>
@@ -36,34 +53,34 @@ function Login(userLogin) {
         👇🏼 INGRESA TUS DATOS 👇🏼
         </label>
 
-        <label 
-        htmlFor='username'
-        name="username" >
-  
-        <input 
-        type="text" 
-        className={styles.input} 
-        placeholder='E-mail'
-        value={userData.email}
-        onChange={handleChange}
-        />
+        <label htmlFor='email'>
+          <input 
+          type="text" 
+          className={styles.input} 
+          placeholder='E-mail'
+          name="email"
+          value={userData.email}
+          onChange={handleChange}
+          />
+          {errors.email && <p>{errors.email}</p>}
         </label>
 
-        <label 
-        htmlFor='password'
-        name="password" >
-          
+        <label htmlFor='password'>
           <input 
           type="text"
           className={styles.input} 
           placeholder='Password'
+          name="password"
           value={userData.password}
           onChange={handleChange}
           />
+          {errors.password && <p>{errors.password}</p>} 
         </label>
 
         <button 
-        className={styles.button}> Submit
+        className={styles.button}
+        onClick={handleSubmit}> 
+        Submit
         </button>
       </div>
 

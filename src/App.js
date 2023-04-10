@@ -2,8 +2,8 @@ import './App.css'
 import Cards from './components/Cards/Cards'
 import Nav from './components/Nav/Nav'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Route, Routes } from 'react-router-dom'
 import About from '../src/components/About/About'
 import Detail from './components/Detail/Detail'
@@ -14,19 +14,18 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
-
   const EMAIL = "invitado@gmail.com";
-  const PASSWORD = "invitado1"
-
+  const PASSWORD = "invitado1";
   const userLogin = (userData) => {
-    if (userData.email === EMAIL && userData.password === PASSWORD){ 
+    if (userData.email === EMAIL && userData.password === PASSWORD) {
       setAccess(true);
-      navigate("/home")} 
+      navigate("/home")
+    }
   }
 
   useEffect(() => {
     !access && navigate('/');
- }, [access, navigate]);
+  }, [access, navigate]);
 
   //! EVENT HANDLERS
   const onSearch = (id) => {
@@ -58,7 +57,7 @@ function App() {
       <div>
         <Nav onSearch={onSearch} />
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Login login={userLogin} />} />
           <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
           <Route path="/about" element={<About />} />
           <Route path="/detail/:detailId" element={<Detail />} />

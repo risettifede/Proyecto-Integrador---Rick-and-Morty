@@ -1,27 +1,30 @@
-export const validateEmail = (gmail) => {
+const validate = (userData) => {
     const errors = {};
-    const validateGmail = '/^[a-zA-Z0-9]+([._][a-zA-Z0-9]+)*@gmail.com$/'
+    // const validateGmail = '/^[a-zA-Z0-9]+([._][a-zA-Z0-9]+)*@gmail.com$/'
 
-    if (!gmail) { errors.gmail = 'Debe ingresar un correo electrónico' }
-    else if (!validateGmail.test(gmail)) { errors.gmail = 'Debe ingresar un gmail' }
-    else if (gmail.length > 35) { errors.gmail = 'No debe superar 35 caracteres' }
+    /* GMAIL */
+    if (!userData.email) { errors.email = 'Debe ingresar un correo electrónico' }
+    if (!/^[a-zA-Z0-9]+([._][a-zA-Z0-9]+)*@gmail.com$/.test(userData.email)) { errors.email = 'Debe ingresar un gmail' }
+    if (userData.email.length > 35) { errors.email = 'No debe superar 35 caracteres' }
 
+    /* PASSWORD */
+    if (!userData.password) { errors.password = 'Ingrese password' }
+    if (!/.*\d+.*/.test(userData.password)) { errors.password = 'Debe tener al menos un (1) número' }
+    if (userData.password.length < 6 || userData.password.length > 10) { errors.password = 'Debe tener entre 6 y 10 caracteres' }
+
+    return errors;
 }
 
-export const validatePassword = (password) => {
-    const errors = {};
-    if (!password) { errors.password = 'Ingrese password' }
-    else if (!/\d/.test(password)) { errors.password = 'Debe tener al menos un (1) número' } // Expresión regular: "/\d/" verifica si hay un dígito numérico.
-    else if (password.length < 6 && password.length > 10) {errors.password = 'Debe tener entre 6 y 10 caracteres'}
+// const validatePassword = (password) => {
+//     const errors = {};
+//     if (!password) { errors.password = 'Ingrese password' }
+//     else if (!/\d/.test(password)) { errors.password = 'Debe tener al menos un (1) número' } // Expresión regular: "/\d/" verifica si hay un dígito numérico.
+//     else if (password.length < 6 && password.length > 10) { errors.password = 'Debe tener entre 6 y 10 caracteres' }
+// }
 
-}
+export default validate;
 
-// la contraseña tiene que tener al menos un número.
-// la contraseña tiene que tener una longitud entre 6 y 10 caracteres.
 
-// el nombre de usuario tiene que ser un email (¡Explora validaciónes REGEX en internet!).
-// el nombre de usuario no puede estar vacío.
-// el nombre de usuario no puede tener más de 35 caracteres.
 
 
 
