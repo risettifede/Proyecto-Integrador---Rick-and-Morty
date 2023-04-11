@@ -1,10 +1,10 @@
-const validate = (userData) => {
+const validateUser = (userData) => {
     const errors = {};
-    // const validateGmail = '/^[a-zA-Z0-9]+([._][a-zA-Z0-9]+)*@gmail.com$/'
+    const validateGmailRegex = /^[a-zA-Z0-9]+([._][a-zA-Z0-9]+)*@gmail.com$/ // No se puede hacer un test de un string. Por eso no funcionaba.
 
     /* GMAIL */
     if (!userData.email) { errors.email = 'Debe ingresar un correo electrónico' }
-    if (!/^[a-zA-Z0-9]+([._][a-zA-Z0-9]+)*@gmail.com$/.test(userData.email)) { errors.email = 'Debe ingresar un gmail' }
+    if (!validateGmailRegex.test(userData.email)) { errors.email = 'Debe ingresar un gmail' }
     if (userData.email.length > 35) { errors.email = 'No debe superar 35 caracteres' }
 
     /* PASSWORD */
@@ -22,7 +22,7 @@ const validate = (userData) => {
 //     else if (password.length < 6 && password.length > 10) { errors.password = 'Debe tener entre 6 y 10 caracteres' }
 // }
 
-export default validate;
+export default validateUser;
 
 
 

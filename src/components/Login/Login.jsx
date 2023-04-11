@@ -1,15 +1,18 @@
 import React from 'react'
 import styles from './Login.module.css'
 import { useState } from 'react';
-import validate from '../Validate/Validate';
+import { useNavigate } from 'react-router-dom';
+import validateUser from '../../commons/functions/validateUser';
 
-function Login({userLogin}) {
+function Login({}) {
   
   const [errors, setErrors] = useState({});
   const [userData, setUserData] = useState({
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setUserData({
@@ -30,19 +33,24 @@ function Login({userLogin}) {
     // }
     
 
-    setErrors(validate({
+    setErrors(validateUser({
       ...userData,
       [event.target.name]: event.target.value
     }))
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    userLogin(userData);
+    event.preventDefault()
+    // console.log(Object.keys(errors));
+    if (Object.keys(errors).length == 0) { // el keys (puede ser tambien la propiedad value) sirrve si el objeto tiene propiedades. Objet, método.
+      // console.log("entre");
+    return navigate("/home")
+    } 
+    // userLogin(userData);
   }
 
   return (
-    <form className={styles.login} onSubmit={handleSubmit}> 
+    <form className={styles.login} onSubmit={handleSubmit}>
       <div className={styles.img_container}>
         <img src="rickymorty.png" alt="Rick" />
       </div>
@@ -80,7 +88,7 @@ function Login({userLogin}) {
         <button 
         className={styles.button}
         onClick={handleSubmit}> 
-        Submit
+        Login
         </button>
       </div>
 
