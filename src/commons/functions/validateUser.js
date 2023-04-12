@@ -15,18 +15,15 @@ const validateUser = (userData) => {
     return errors;
 }
 
+export default validateUser;
+
+
 // const validatePassword = (password) => {
 //     const errors = {};
 //     if (!password) { errors.password = 'Ingrese password' }
 //     else if (!/\d/.test(password)) { errors.password = 'Debe tener al menos un (1) número' } // Expresión regular: "/\d/" verifica si hay un dígito numérico.
 //     else if (password.length < 6 && password.length > 10) { errors.password = 'Debe tener entre 6 y 10 caracteres' }
 // }
-
-export default validateUser;
-
-
-
-
 
 
 
