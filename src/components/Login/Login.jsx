@@ -4,34 +4,24 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import validateUser from '../../commons/functions/validateUser';
 
-function Login({}) {
+
+function Login() {
   
+  const navigate = useNavigate();
   const [errors, setErrors] = useState({});
+  const [access, setAccess] = useState(false);
   const [userData, setUserData] = useState({
     email: "",
     password: "",
   });
-
-  const navigate = useNavigate();
+  
+  // const navigate = useNavigate();
 
   const handleChange = (event) => {
     setUserData({
       ...userData,
       [event.target.name]: event.target.value
     });
-
-    // const handleChange = (event) => {
-    //   setUserData(prevState => ({
-    //     ...prevState,
-    //     [event.target.name]: event.target.value
-    //   }));
-    //                                                    ESTO PUEDE SER UNA MEJORA. PARA QUE ACTUALICE MÁS RAPIDO. REVISAR.                                                   
-    //   setErrors(validate({
-    //     ...userData,
-    //     [event.target.name]: event.target.value
-    //   }));
-    // }
-    
 
     setErrors(validateUser({
       ...userData,
@@ -41,16 +31,15 @@ function Login({}) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    // console.log(Object.keys(errors));
-    if (Object.keys(errors).length == 0) { // el keys (puede ser tambien la propiedad value) sirrve si el objeto tiene propiedades. Objet, método.
-      // console.log("entre");
-    return navigate("/home")
-    } 
-    // userLogin(userData);
+    const email = userData.email;
+    const password = userData.password;
+    if (email === "invitado@gmail.com" && password === "invitado1") { setAccess(true); navigate("/home") }
+    else { alert ("Usuario o contraseña incorrecta") } 
   }
 
   return (
     <form className={styles.login} onSubmit={handleSubmit}>
+      
       <div className={styles.img_container}>
         <img src="rickymorty.png" alt="Rick" />
       </div>

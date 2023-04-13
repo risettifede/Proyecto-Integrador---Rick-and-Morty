@@ -1,21 +1,19 @@
 import './App.css'
 import Cards from './components/Cards/Cards'
 import Nav from './components/Nav/Nav'
-import { useState } from 'react'
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Route, Routes } from 'react-router-dom'
-import About from '../src/components/About/About'
+import About from './components/About/About'
 import Detail from './components/Detail/Detail'
 import Login from './components/Login/Login'
+import { useState, useEffect } from 'react'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 
 function App() {
   //! HOOKS
   const [characters, setCharacters] = useState([]);
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
-  const EMAIL = "invitado@gmail.com";
-  const PASSWORD = "invitado1";
+  // const EMAIL = "invitado@gmail.com";
+  // const PASSWORD = "invitado1";
 
   // const userLogin = (userData) => {
   //   if (userData.email === EMAIL && userData.password === PASSWORD) {
