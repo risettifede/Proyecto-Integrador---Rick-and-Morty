@@ -23,8 +23,8 @@ function App() {
   }
 
   useEffect(() => {
-    !access && navigate('/home');
-  }, [access, navigate]);
+    !access && navigate('/');
+  }, [access]);
 
   //! EVENT HANDLERS
   const onSearch = (id) => {
