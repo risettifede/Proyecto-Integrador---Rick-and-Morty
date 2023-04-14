@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Card.module.css';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { addFav, removeFav } from '../../redux/actions';
-import { useState, useEffect, useSelector } from 'react';
+import { useState, useEffect } from 'react';
 
 function Card({ id, name, species, gender, image, onClose, addFav, removeFav }) {
    const [isFav, setIsFav] = useState(false);
@@ -61,3 +61,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
+

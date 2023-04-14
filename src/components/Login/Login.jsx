@@ -4,12 +4,11 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import validateUser from '../../commons/functions/validateUser';
 
-
-function Login(setAccess) {
+function Login() {
   
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
-  // const [access, setAccess] = useState(false);
+  const [access, setAccess] = useState(false);
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -33,7 +32,7 @@ function Login(setAccess) {
     event.preventDefault()
     const email = userData.email;
     const password = userData.password;
-    if (email === "invitado@gmail.com" && password === "invitado1") { setAccess(true); navigate("/home") }
+    if (email === "invitado@gmail.com" && password === "maradona1") { setAccess(true); navigate("/home") }
     else { alert ("Usuario o contraseña incorrecta") } 
   }
 
@@ -52,7 +51,7 @@ function Login(setAccess) {
 
         <label htmlFor='email'>
           <input 
-          type="text" 
+          type="email" 
           className={styles.input} 
           placeholder='E-mail'
           name="email"
@@ -64,7 +63,7 @@ function Login(setAccess) {
 
         <label htmlFor='password'>
           <input 
-          type="text"
+          type="password"
           className={styles.input} 
           placeholder='Password'
           name="password"

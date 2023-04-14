@@ -13,7 +13,7 @@ useEffect(() => {
     const KEY = "bcbd72231a15.18199c299130a41d79bc";
     axios(`${URL_BASE}/character/${detailId}?key=${KEY}`) .then((response) =>
         setCharacter(response.data))
-}, []);
+}, [detailId]);
 
 return (
     <div>

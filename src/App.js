@@ -13,17 +13,17 @@ function App() {
   const [access, setAccess] = useState(false); 
   const navigate = useNavigate();
   const EMAIL = "invitado@gmail.com";
-  const PASSWORD = "invitado1";
+  const PASSWORD = "maradona1";
 
   const userLogin = (userData) => {
     if (userData.email === EMAIL && userData.password === PASSWORD) {
-      setAccess(true);
       navigate("/home")
+      setAccess(true);
     }
   }
 
   useEffect(() => {
-    !access && navigate('/');
+    !access && navigate('/home');
   }, [access, navigate]);
 
   //! EVENT HANDLERS
