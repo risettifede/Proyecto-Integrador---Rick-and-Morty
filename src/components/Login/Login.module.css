@@ -2,10 +2,8 @@
     background-color: #2c3e50;
     position: absolute;
     border-radius: 10px;
-    padding: 10px; /* aumentamos el padding para que haya más espacio entre los elementos */
+    padding: 5%;
     display: flex;
-    flex-direction: row;
-    /* flex-wrap: wrap; */
     align-items: center;
     justify-content: center;
     top: 50%;
@@ -15,7 +13,6 @@
     width: 200%;
     font-family: 'Bebas Neue';
     box-shadow: 0px 0px 10px 5px #f4d03f;
-   ; /* reducimos un poco el ancho para que los elementos no queden muy separados */
 }
 
 .label {
@@ -24,27 +21,25 @@
 }
 
 .img_container {
-    width: 70%;
-    height: 70%;
+    max-width: 100px;
+    max-height: 100px;
 }
 
 .img_container img {
-    width: 70%; /* ajustamos el ancho para que la imagen ocupe todo el espacio disponible */
-    height: 70%; /* ajustamos la altura para que se mantenga la proporción original */
-    
+    width: 100px;
+    height: 100px; 
 }
 
 .input {
     background-color: #fff;
     border: none;
-    border-radius: 5px; /* reducimos el radio para que los bordes sean más suaves */
-    /* box-shadow: 0 0 5px #f4d03f; */
-    margin: 10px;
-    padding: 15px; /* aumentamos el padding para que el texto no quede pegado a los bordes */
+    border-radius: 5px; 
+    margin: 30px;
+    margin-bottom: 10%;
     font-size: 16px;
-    width: 80%; /* ampliamos el ancho para que ocupe todo el espacio disponible */
+    width: 80%; 
     font-family: 'Bebas Neue' ;
-    
+    padding: 5px;
 }
 
 .button {
@@ -54,28 +49,19 @@
     color: black;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 20px; /* aumentamos el margen para que quede más separado del input */
+    margin-top: 20px; 
     padding: 15px;
     width: 40%;
     font-family: 'Bebas Neue';
 }
 
 .input:hover {
-    box-shadow: 0 0 10px #f4d03f; /* agregamos un efecto de sombra cuando el cursor pasa sobre el input */
+    box-shadow: 0 0 10px #f4d03f; 
     cursor: crosshair;
 }
-
 
 .button:hover {
     background-color: transparent;
     border: 1px solid #f4d03f;
     color: #fff;
 }
-
-/* .input:invalid {
-    box-shadow: 0 0 5px #e74c3c;
-}
-
-.input:valid {
-    box-shadow: 0 0 5px #2ecc71;
-} */

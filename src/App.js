@@ -10,17 +10,17 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 function App() {
   //! HOOKS
   const [characters, setCharacters] = useState([]);
+  const [access, setAccess] = useState(false); 
   const navigate = useNavigate();
-  const [access, setAccess] = useState(false);
-  // const EMAIL = "invitado@gmail.com";
-  // const PASSWORD = "invitado1";
+  const EMAIL = "invitado@gmail.com";
+  const PASSWORD = "invitado1";
 
-  // const userLogin = (userData) => {
-  //   if (userData.email === EMAIL && userData.password === PASSWORD) {
-  //     setAccess(true);
-  //     navigate("/home")
-  //   }
-  // }
+  const userLogin = (userData) => {
+    if (userData.email === EMAIL && userData.password === PASSWORD) {
+      setAccess(true);
+      navigate("/home")
+    }
+  }
 
   useEffect(() => {
     !access && navigate('/');
@@ -56,7 +56,7 @@ function App() {
       <div>
         <Nav onSearch={onSearch} />
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Login onSubmit={userLogin} />} />
           <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
           <Route path="/about" element={<About />} />
           <Route path="/detail/:detailId" element={<Detail />} />

@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import validateUser from '../../commons/functions/validateUser';
 
 
-function Login() {
+function Login(setAccess) {
   
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
-  const [access, setAccess] = useState(false);
+  // const [access, setAccess] = useState(false);
   const [userData, setUserData] = useState({
     email: "",
     password: "",
