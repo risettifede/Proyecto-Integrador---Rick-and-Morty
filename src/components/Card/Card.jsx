@@ -17,10 +17,11 @@ function Card({ id, name, species, gender, image, onClose, addFav, removeFav }) 
 
    useEffect(() => {
       myFavorites.forEach((char) => {
-         if (char.id === id) {
+         const id = char ? char.id : null;
+         if (id === id) {
             setIsFav(true);
          }
-      });
+      })
    }, [myFavorites]);
 
    return (

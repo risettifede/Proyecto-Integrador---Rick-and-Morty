@@ -33,6 +33,19 @@ function Nav (props) {
               className={styles.link}> <h3>ABOUT</h3>
             </Link>
 
+            <div>
+              <button>
+                <Link
+                to="/favorites"
+                className={styles.favorites}> Favorites
+                </Link>
+              </button>
+            </div>
+
+            {/* <div className='button_container'>
+              <button className={styles.button_logout} > 🚷 </button>
+            </div> */}
+
           </div>
         </div>
       </div>

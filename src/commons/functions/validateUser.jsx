@@ -3,9 +3,9 @@ const validateUser = (userData) => {
     const validateGmailRegex = /^[a-zA-Z0-9]+([._][a-zA-Z0-9]+)*@gmail.com$/ // No se puede hacer un test de un string. Por eso no funcionaba.
 
     /* GMAIL */
-    if (!userData.email) { errors.email = 'Debe ingresar un correo electrónico' }
-    if (!validateGmailRegex.test(userData.email)) { errors.email = 'Debe ingresar un gmail' }
-    if (userData.email.length > 35) { errors.email = 'No debe superar 35 caracteres' }
+    if (!userData.gmail) { errors.gmail = 'Debe ingresar un correo electrónico' }
+    if (!validateGmailRegex.test(userData.gmail)) { errors.gmail = 'Debe ingresar un gmail' }
+    if (userData.gmail.length > 35) { errors.gmail = 'No debe superar 35 caracteres' }
 
     /* PASSWORD */
     if (!userData.password) { errors.password = 'Ingrese password' }

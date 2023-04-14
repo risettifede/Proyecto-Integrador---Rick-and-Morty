@@ -18,7 +18,7 @@ function SearchBar ({onSearch}) {
                 value={id} // Actualiza el valor del input con el estado actualizado
                 placeholder='Ingresar ID'
             />
-            <button className={styles.button} onClick={() => onSearch(id)}> AGREGAR
+            <button className={styles.button} onClick={() => onSearch(id)}> Agregar
         </button>
         </div>
     )

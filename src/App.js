@@ -4,6 +4,7 @@ import Nav from './components/Nav/Nav'
 import About from './components/About/About'
 import Detail from './components/Detail/Detail'
 import Login from './components/Login/Login'
+import Favorites from './components/Favorites/Favorites'
 import { useState, useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 
@@ -11,15 +12,17 @@ function App() {
   //! HOOKS
   const navigate = useNavigate();
   const store = localStorage.getItem('login')
+
+  //! STATES
   const [characters, setCharacters] = useState([]);
-  // const [access, setAccess] = useState(false); 
   const [error, setError] = useState(false)
-  const EMAIL = "invitado@gmail.com";
-  const PASSWORD = "maradona1";
+
+
+  const gmail = "invitado@gmail.com";
+  const password = "maradona1";
 
   const userLogin = (userData) => {
-    if (userData.email === EMAIL && userData.password === PASSWORD) {
-      // setAccess(true)
+    if (gmail === "invitado@gmail.com" && userData.password === password) {
       localStorage.setItem('login', true)
       navigate("/home")
     } else {
@@ -31,7 +34,7 @@ function App() {
     if (store === "true") {
       navigate("/home")
     }
-  }, [store, navigate]); /* Este arreglo indica que useEffect sólo se ejecutará cuando el valor de STORE y NAVIGATE cambie */
+  }, [store, navigate]); /* Este array indica que useEffect sólo se ejecutará cuando el valor de STORE y NAVIGATE cambie */
 
   //! EVENT HANDLERS
   const onSearch = (id) => {
@@ -67,6 +70,7 @@ function App() {
           <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
           <Route path="/about" element={<About />} />
           <Route path="/detail/:detailId" element={<Detail />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </div>
     </div>

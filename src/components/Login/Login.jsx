@@ -9,8 +9,10 @@ function Login() {
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
   const [access, setAccess] = useState(false);
+  const [password, setPassword] = useState("");
+  const [gmail, setGmail] = useState("");
   const [userData, setUserData] = useState({
-    email: "",
+    gmail: "",
     password: "",
   });
   
@@ -30,9 +32,9 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const email = userData.email;
+    const gmail = userData.email;
     const password = userData.password;
-    if (email === "invitado@gmail.com" && password === "maradona1") { setAccess(true); navigate("/home") }
+    if (gmail === "invitado@gmail.com" && password === "maradona1") { setAccess(true); navigate("/home") }
     else { alert ("Usuario o contraseña incorrecta") } 
   }
 
@@ -55,10 +57,10 @@ function Login() {
           className={styles.input} 
           placeholder='E-mail'
           name="email"
-          value={userData.email}
+          value={userData.gmail}
           onChange={handleChange}
           />
-          {errors.email && <p>{errors.email}</p>}
+          {errors.gmail && <p>{errors.gmail}</p>}
         </label>
 
         <label htmlFor='password'>

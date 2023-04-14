@@ -16,6 +16,7 @@
   width: 100%; /* El contenedor ocupa todo el ancho del elemento padre */
   padding: 1rem; /* Aumenta el padding para dar más espacio */
   font-family: "Monsterrat";
+  display: flex;
 }
 
 .links_container {
@@ -23,6 +24,7 @@
   justify-content: center; /* Centra los elementos horizontalmente */
   text-decoration: none;
   font-family: "Monsterrat";
+  display: flex;
 }
 
 .links_container h3 {
@@ -30,6 +32,7 @@
   color: #fff;
   text-decoration: none;
   font-family: "Monsterrat";
+  display: flex;
 }
 
 .link {
@@ -40,6 +43,7 @@
 .search_container {
   flex: 1; /* El contenedor de búsqueda ocupa todo el espacio disponible */
   margin-right: 1rem; /* Añade un margen derecho para separarlo de los elementos a la derecha */
+  
 }
 
 
