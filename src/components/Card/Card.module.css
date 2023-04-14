@@ -7,7 +7,7 @@
   width: 200px;
   text-align: center;
   vertical-align: top;
-  font-family: 'Bebas Neue';
+  font-family: 'Montserrat';
   /* background-image: url("/public/fondo-card.png"); */
   /* background-attachment: scroll; */
 }
@@ -32,7 +32,7 @@
 .gender {
   font-size: 18px;
   margin: 10px 0;
-  font-family: 'Bebas Neue';
+  font-family: 'Montserrat';
   color: #fff;
 }
 

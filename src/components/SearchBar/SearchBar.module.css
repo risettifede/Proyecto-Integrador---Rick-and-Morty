@@ -5,7 +5,7 @@
   font-size: 1.2rem;
   /* box-shadow: 0px 0px 5px rgba(0, 128, 0, 0.5); */
   border-radius: 10px;
-  font-family: "Bebas Neue";
+  font-family: 'Montserrat';
 }
 
 .button {
@@ -18,5 +18,5 @@
   cursor: pointer;
   font-size: 1.2rem;
   box-shadow: grey;
-  font-family: "Bebas Neue";
+  font-family: 'Montserrat';
 }

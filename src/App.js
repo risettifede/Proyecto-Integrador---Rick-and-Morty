@@ -9,16 +9,16 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 
 function App() {
   //! HOOKS
+  const navigate = useNavigate();
   const [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(false); 
-  const navigate = useNavigate();
   const EMAIL = "invitado@gmail.com";
   const PASSWORD = "maradona1";
 
   const userLogin = (userData) => {
     if (userData.email === EMAIL && userData.password === PASSWORD) {
+      setAccess(true)
       navigate("/home")
-      setAccess(true);
     }
   }
 

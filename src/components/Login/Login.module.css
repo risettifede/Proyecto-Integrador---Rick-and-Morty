@@ -1,9 +1,10 @@
 .login {
     background-color: #2c3e50;
-    position: absolute;
+    position:absolute;
     border-radius: 10px;
-    padding: 5%;
+    padding: 10px; 
     display: flex;
+    /* flex-direction: row; */
     align-items: center;
     justify-content: center;
     top: 50%;
@@ -11,7 +12,7 @@
     transform: translate(-50%, -50%);
     max-width: 700px;
     width: 200%;
-    font-family: 'Bebas Neue';
+    font-family: 'Montserrat';
     box-shadow: 0px 0px 10px 5px #f4d03f;
 }
 
@@ -21,25 +22,26 @@
 }
 
 .img_container {
-    max-width: 100px;
-    max-height: 100px;
+    width: 70%;
+    height: 70%;
 }
 
 .img_container img {
-    width: 100px;
-    height: 100px; 
+    width: 70%;
+    height: 70%; 
 }
 
 .input {
     background-color: #fff;
     border: none;
     border-radius: 5px; 
-    margin: 30px;
-    margin-bottom: 10%;
+    margin: 10px;
+    padding: 15px; 
     font-size: 16px;
+    /* box-shadow: 0 0 5px #f4d03f; */
     width: 80%; 
-    font-family: 'Bebas Neue' ;
-    padding: 5px;
+    font-family: 'Montserrat' ;
+    
 }
 
 .button {
@@ -52,7 +54,7 @@
     margin-top: 20px; 
     padding: 15px;
     width: 40%;
-    font-family: 'Bebas Neue';
+    font-family: 'Montserrat';
 }
 
 .input:hover {
@@ -60,8 +62,10 @@
     cursor: crosshair;
 }
 
+
 .button:hover {
     background-color: transparent;
     border: 1px solid #f4d03f;
     color: #fff;
 }
+
