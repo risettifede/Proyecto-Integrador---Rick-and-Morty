@@ -10,21 +10,28 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 function App() {
   //! HOOKS
   const navigate = useNavigate();
+  const store = localStorage.getItem('login')
   const [characters, setCharacters] = useState([]);
-  const [access, setAccess] = useState(false); 
+  // const [access, setAccess] = useState(false); 
+  const [error, setError] = useState(false)
   const EMAIL = "invitado@gmail.com";
   const PASSWORD = "maradona1";
 
   const userLogin = (userData) => {
     if (userData.email === EMAIL && userData.password === PASSWORD) {
-      setAccess(true)
+      // setAccess(true)
+      localStorage.setItem('login', true)
       navigate("/home")
+    } else {
+      setError(true)
     }
   }
 
   useEffect(() => {
-    !access && navigate('/');
-  }, [access]);
+    if (store === "true") {
+      navigate("/home")
+    }
+  }, [store, navigate]); /* Este arreglo indica que useEffect sólo se ejecutará cuando el valor de STORE y NAVIGATE cambie */
 
   //! EVENT HANDLERS
   const onSearch = (id) => {
