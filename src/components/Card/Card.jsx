@@ -12,34 +12,36 @@ function Card({ id, name, species, gender, image, onClose, addFav, removeFav }) 
 
    const handleFavorite = () => {
       if (isFav) { return setIsFav(false), removeFav(id) };
-      if (!isFav) { return setIsFav(true), addFav(name) };
+      if (!isFav) { return setIsFav(true), addFav(id) };
    }
 
-   useEffect(() => {
-      myFavorites.forEach((char) => {
-         const id = char ? char.id : null;
-         if (id === id) {
-            setIsFav(true);
-         }
-      })
-   }, [myFavorites]);
+  useEffect(() => {
+   myFavorites.forEach((char) => {
+      const id = char ? char.id : null;
+      if (id === id) {
+         setIsFav(true);
+      }
+   })
+}, [myFavorites, id]);
 
    return (
       <div className={styles.card}>
          <button className={styles.closeButton} onClick={() => onClose(id)}>
          </button>
-         <img className={styles.image} src={image} alt="Rick Sánchez" />
+         <img className={styles.image} src={image} alt={name} />
 
          <div className={styles.body}>
             <Link to={`/detail/${id}`}>
                <h2 className={styles.name}>Name: {name}</h2>
             </Link>
-            <h2 className={styles.species}>Species: {species}</h2>
-            <h2 className={styles.gender}>Gender: {gender}</h2>
+            <p className={styles.species}>Species: {species}</p>
+            <p className={styles.gender}>Gender: {gender}</p>
          </div>
-         <div>
-            <button onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>
-         </div>
+         {isFav ? (
+          <button onClick={handleFavorite}>❤️</button>
+        ) : (
+          <button onClick={handleFavorite}>🤍</button>
+        )}
       </div>
    );
 }

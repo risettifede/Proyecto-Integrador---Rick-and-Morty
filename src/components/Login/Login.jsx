@@ -32,7 +32,7 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const gmail = userData.email;
+    const gmail = userData.gmail;
     const password = userData.password;
     if (gmail === "invitado@gmail.com" && password === "maradona1") { setAccess(true); navigate("/home") }
     else { alert ("Usuario o contraseña incorrecta") } 
@@ -51,19 +51,19 @@ function Login() {
         👇🏼 INGRESA TUS DATOS 👇🏼
         </label>
 
-        <label htmlFor='email'>
+        <label htmlFor='text'>
           <input 
-          type="email" 
+          type="gmail" 
           className={styles.input} 
           placeholder='E-mail'
-          name="email"
+          name="gmail"
           value={userData.gmail}
           onChange={handleChange}
           />
           {errors.gmail && <p>{errors.gmail}</p>}
         </label>
 
-        <label htmlFor='password'>
+        <label htmlFor='text'>
           <input 
           type="password"
           className={styles.input} 

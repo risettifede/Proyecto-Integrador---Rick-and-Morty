@@ -4,7 +4,7 @@ import Nav from './components/Nav/Nav'
 import About from './components/About/About'
 import Detail from './components/Detail/Detail'
 import Login from './components/Login/Login'
-import Favorites from './components/Favorites/Favorites'
+// import Favorites from './components/Favorites/Favorites'
 import { useState, useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 
@@ -70,7 +70,7 @@ function App() {
           <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
           <Route path="/about" element={<About />} />
           <Route path="/detail/:detailId" element={<Detail />} />
-          <Route path="/favorites" element={<Favorites />} />
+          {/* <Route path="/favorites" element={<Favorites />} /> */}
         </Routes>
       </div>
     </div>
