@@ -22,12 +22,12 @@ const Detail = () => {
         <>
           <img src={character.image} alt="Imagen" className={styles.img} />
           <div className={styles.contenido}>
-            <h1>{character.name}</h1>
+            <h1> Name: {character.name}</h1>
             <span>
-              <p>{character.status}</p>
-              <p>{character.species}</p>
-              <p>{character.gender}</p>
-              <p>{character.origin?.name}</p>
+              <p>Status: {character.status}</p>
+              <p>Species: {character.species}</p>
+              <p>Gender: {character.gender}</p>
+              <p>Origin: {character.origin?.name}</p>
             </span>
 
           </div>
