@@ -9,11 +9,11 @@
   font-family: "Monsterrat";
 }
 
-.nav h3 {
+.list h3 {
   display: inline-block;
   position: relative;
-  left: 80vh;
-  top: -5vh;
+  left: 60vh;
+  top: 0vh;
   justify-content: flex-start;
   margin-right: 20px;
   font-family: "Montserrat";
@@ -21,8 +21,9 @@
 }
 
 .search_container {
-  flex: 1; /* El contenedor de búsqueda ocupa todo el espacio disponible */
-  margin-right: 1rem; /* Añade un margen derecho para separarlo de los elementos a la derecha */
+  display: inline-block;
+  position: relative;
+  right: 50vh;
 }
 
   

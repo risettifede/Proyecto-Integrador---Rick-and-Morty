@@ -11,21 +11,23 @@ function Nav(props) {
 
   return (
     <div className={styles.nav} >
-        <div className={styles.search_container}>
+      <div className={styles.search_container}>
+        <SearchBar
+          onSearch={props.onSearch}
+        />
+      </div>
+      <div className={styles.list}>
+        <Link
+          to="/home"> <h3>HOME</h3>
+        </Link>
+        <Link
+          to="/about"><h3>ABOUT</h3>
+        </Link>
+        <Link
+          to="/favorites"><h3>FAVORITES</h3>
+        </Link>
+      </div>
 
-          <SearchBar
-            onSearch={props.onSearch}
-          />
-          <Link
-            to="/home"> <h3>HOME</h3>
-          </Link>
-          <Link
-            to="/about"><h3>ABOUT</h3>
-          </Link>
-          <Link
-            to="/favorites"><h3>FAVORITES</h3>
-          </Link>
-        </div>
     </div>
   );
 }
