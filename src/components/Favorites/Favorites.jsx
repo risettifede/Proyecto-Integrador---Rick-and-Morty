@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Card from './Card';
+// import styles from './Favorites.module.css'
 
 const Favorites = ({ myFavorites }) => {
   return (

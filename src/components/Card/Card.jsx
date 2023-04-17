@@ -11,18 +11,22 @@ function Card({ id, name, species, gender, image, onClose, addFav, removeFav }) 
    // const dispatch = useDispatch();
 
    const handleFavorite = () => {
-      if (isFav) { return setIsFav(false), removeFav(id) };
-      if (!isFav) { return setIsFav(true), addFav(id) };
+      if (!isFav) { 
+         return setIsFav(true), addFav(id) }
+      else {
+         return setIsFav(false), removeFav(id)
+      }
    }
 
-  useEffect(() => {
-   myFavorites.forEach((char) => {
-      const id = char ? char.id : null;
-      if (id === id) {
-         setIsFav(true);
-      }
-   })
-}, [myFavorites, id]);
+   useEffect(() => {
+      myFavorites.forEach((char) => {
+         const fav = char ? char : null;
+         if (fav === id) {
+            setIsFav(true);
+         }
+      })
+   }, [myFavorites, id]);
+
 
    return (
       <div className={styles.card}>
@@ -37,11 +41,14 @@ function Card({ id, name, species, gender, image, onClose, addFav, removeFav }) 
             <p className={styles.species}>Species: {species}</p>
             <p className={styles.gender}>Gender: {gender}</p>
          </div>
-         {isFav ? (
-          <button onClick={handleFavorite}>❤️</button>
-        ) : (
-          <button onClick={handleFavorite}>🤍</button>
-        )}
+         <div className={styles.btn_fav}>
+            {isFav ? (
+               <button onClick={handleFavorite}>❤️</button>
+            ) : (
+               <button onClick={handleFavorite}>🤍</button>
+            )}
+         </div>
+
       </div>
    );
 }
@@ -64,4 +71,5 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
+
 
