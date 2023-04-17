@@ -10,10 +10,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url(../public/BackgroundApp.jpg); */
-  background-color: #2C3E50;
+  background-image: url(../public/fondo-de-about.png);
   background-repeat: no-repeat;
   background-size: cover;
+  /* background-color: #2C3E50; */
   /* background-attachment: fixed; */
   
  
