@@ -38,14 +38,14 @@ function App() {
 
   //! EVENT HANDLERS
   const onSearch = (id) => {
-    const URL_BASE = "https://be-a-rym.up.railway.app/api"
-    const KEY = "bcbd72231a15.18199c299130a41d79bc"
+    const URL_BASE = "http://localhost:3001/rickandmorty/character/${id}"
+    // const KEY = "bcbd72231a15.18199c299130a41d79bc"
 
     if (characters.find((char) => char.id === id)) {
       return alert("Personaje repetido");
     }
 
-    fetch(`${URL_BASE}/character/${id}?key=${KEY}`)
+    fetch(`${URL_BASE}/character/${id}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.name) {

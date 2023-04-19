@@ -10,9 +10,9 @@ const Detail = () => {
   const [character, setCharacter] = useState({});
 
   useEffect(() => {
-    const URL_BASE = "https://be-a-rym.up.railway.app/api";
-    const KEY = "bcbd72231a15.18199c299130a41d79bc";
-    axios(`${URL_BASE}/character/${detailId}?key=${KEY}`).then((response) =>
+    const URL_BASE = "http://localhost:3001/rickandmorty/character/${id}";
+    // const KEY = "bcbd72231a15.18199c299130a41d79bc";
+    axios(`${URL_BASE}/character/${detailId}`).then((response) =>
       setCharacter(response.data))
   }, [detailId]);
 
