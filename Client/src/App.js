@@ -4,7 +4,7 @@ import Nav from './components/Nav/Nav'
 import About from './components/About/About'
 import Detail from './components/Detail/Detail'
 import Login from './components/Login/Login'
-// import Favorites from './components/Favorites/Favorites'
+import Favorites from './components/Favorites/Favorites'
 import { useState, useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 
@@ -47,7 +47,7 @@ function App() {
 
     fetch(`${URL_BASE}/character/${id}`)
       .then((response) => response.json())
-      .then((data) => {
+      .then((data) => { 
         if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]); // setCharcters está recibiendo una callback. Y tiene un parametro (oldChars) que simboliza el estado
         } else {
