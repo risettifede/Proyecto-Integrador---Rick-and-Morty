@@ -19,9 +19,9 @@ const getCharById = (req, res) => {
         })
 }
 
-
 module.exports = { getCharById };
 
+/* RESOLUCIÓN CON ASYNC AWAIT */
 // const axios = require('axios');
 
 // const URL = "https://rickandmortyapi.com/api/character/";
